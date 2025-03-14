@@ -1,0 +1,56 @@
+#include<graphics.h>
+
+#include<stdio.h>
+
+#include<conio.h>
+
+void main()
+
+{
+
+   int gd=DETECT,gm;
+
+   int i,x=0,y=0,ymin=0;
+
+     initgraph(&gd,&gm,"C:\\TC\\BGI");
+
+     for(i=2;i<=10;i++)
+
+      {
+
+       setfillstyle(SOLID_FILL,20);
+
+       for(y=ymin;y<=480;y+=2)
+
+         {
+
+            if(y%5==0)x=x+3;
+
+            fillellipse(x,y,10,10);
+
+            delay(20);
+
+          }
+
+        ymin=480-(480/i);
+
+        for(y=480;y>=ymin;y-=2)
+
+          {
+
+             if(y%5==0)x=x+3;
+
+             fillellipse(x,y,10,10);
+
+             delay(20);
+
+           }
+
+           if(x>=640)break;
+
+}
+
+      closegraph();
+
+}
+
