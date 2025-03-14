@@ -1,0 +1,77 @@
+#include<graphics.h>
+
+#include<stdio.h>
+
+#include<string.h>
+
+#include<conio.h>
+
+int main(void)
+
+{
+
+  int gd=DETECT,gm;
+
+  int i,j=0,x=10,k,l;
+
+  char s1[100],s2[20];
+
+  initgraph(&gd,&gm,"C:\\TC\\BGI");
+
+  printf(" Enter a sentence:\n");
+
+  gets(s1);
+
+  l=strlen(s1);
+
+  cleardevice();
+
+  outtextxy(10,0,s1);
+
+  setviewport(0,15,639,464,0);
+
+  for(k=0;k<=l;k++)
+
+   {
+
+      if(s1[k]!=' '&&s1[k]!='\0')
+
+       {
+
+          s2[j++]=s1[k];
+
+           }
+
+        else
+
+        {
+
+        s2[j++]='\0';
+
+        j=0;
+
+        for(i=10;i<=460;i+=10)
+
+          {  
+
+            outtextxy(x,i,s2);
+
+            delay(100);
+
+         }
+
+         clearviewport();
+
+         x=x+strlen(s2)*7+10;
+
+          }
+
+        }
+
+        getch();
+
+        closegraph();
+
+        return(0);
+
+     }
