@@ -1,0 +1,63 @@
+#include<stdio.h> 
+
+#include<conio.h> 
+
+#include<graphics.h>
+
+ void main() {
+
+int gd=DETECT, gm:
+
+int xcmin, ycmin, xcmax, ycmax;
+
+int x,y,i;
+
+ initgraph(&gd,&gm, "c:\\TC\\BGI"); 
+
+printf ("Enter the clipmin value:");
+
+ scanf ("%d,%d",&xcmin, &ycmin):
+
+printf ("Enter the clipmax value:");
+
+ scanf("%d, %d",&xcmax, &ycmax);
+
+ rectangle(xcmin,ycmin,xcmax,ycmax):
+
+printf ("\n Enter the x & y value:");
+
+ scanf ("%d,%d",&x,&y);
+
+ putpixel(x,y,20);
+
+ circle(x,y,3); 
+
+if((xcmin< x&& x<xcmax) && (ycmin<y && y<ycmax ))
+
+{
+
+printf ("Given point is inside clip boundry");
+
+}
+
+else if ((xcmin > x ||x>xcmax) | (ycmin > y || y>ycmax))
+
+{
+
+printf ("Given point is outside clip boundry");
+
+}
+
+else
+
+{
+
+printf ("Given point is on clip boundary");
+
+}
+
+getch();
+
+closegraph();
+
+}
